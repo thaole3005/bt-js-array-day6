@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>bt JS day6</title>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+ 
+   
+      <!-- BS4 CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+    <!-- FONTAWSOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+
+ 
+
+    
+    <!-- link CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    
+    
+
+  </head>
+  <body>
+    
+    <main class="container mt-5">
+
+      <div class="row align-items-center">
+        <div class="col-6">
+          <form>
+            <div class="form-group">
+              <label for="addNum_input">Nhập số vào ô dưới đây</label>
+              <input type="number" class="form-control" id="addNum_input" placeholder="Nhập số">
+            </div>
+            
+          </form>
+        </div>
+
+        <div class="col-6 text-center">
+          <button id="addNum_btn" class="btn btn-danger w-50">Thêm số</button>
+        </div>
+
+        <div class="col-12 mt-4">
+
+          <div class="alert alert-success" role="alert">
+            <i class="fas fa-hand-point-right"></i>
+            Tập hợp số của bạn:
+            <h4 id="numbers_collection">Your number here</h4>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row mt-5">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#bt1" role="tab"
+              aria-selected="true">BT1</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#bt2" role="tab"
+              aria-selected="false">BT2</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#bt3" role="tab"
+              aria-selected="false">BT3</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt4" role="tab"
+              aria-selected="false">BT4</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt5" role="tab"
+              aria-selected="false">BT5</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt6" role="tab"
+              aria-selected="false">BT6</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt7" role="tab"
+              aria-selected="false">BT7</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt8" role="tab"
+              aria-selected="false">BT8</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt9" role="tab"
+              aria-selected="false">BT9</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#bt10" role="tab"
+              aria-selected="false">BT10</a>
+          
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent">
+  
+            <div class="tab-pane fade show active" id="bt1" role="tabpanel" aria-labelledby="BT1-tab">
+              <div class="bt1_content">
+                <h2>BT1: Tổng số dương</h2>
+               
+                <button type="button" class="btn btn-success show_result_btn mt-3 d-block w-25 mx-auto">Show Result</button>
+
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+  
+  
+  
+            <div class="tab-pane fade" id="bt2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+  
+                <div class="bt2_content">
+                  <h2>BT2: Đếm số dương </h2>
+
+                <button type="button" class="btn btn-success show_result_btn mt-3 d-block w-25 mx-auto">Show Result</button>
+                  <p class="show_result_text">
+                    KẾT QUẢ
+                  </p>
+                </div>
+  
+                
+            </div>
+  
+  
+            <div class="tab-pane fade" id="bt3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt3_content">
+                <h2>BT3: Tìm số nhỏ nhất</h2>
+                <button type="button" class="btn btn-success show_result_btn mt-3 d-block w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+  
+  
+            <div class="tab-pane fade" id="bt4" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="bt4_content">
+                <h2>BT4: tìm số dương nhỏ nhất </h2>
+               
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+  
+           
+
+            <div class="tab-pane fade" id="bt5" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt5_content">
+                <h2>BT5: Tìm số chẵn cuối cùng</h2>
+            
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="bt6" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt6_content">
+                <h2>BT6: Đổi chỗ
+                  </h2>
+                  <form class="form">
+                    <div class="form-group my-4">
+                      <input type="number" class="form-control input_inline mr-3" id ="vitri1" placeholder="Nhập vị trí thứ nhất">
+                      <input type="number" class="form-control input_inline mr-3" id ="vitri2" placeholder="Nhập vị trí thứ hai">
+                      
+                    </div>
+  
+    
+                  </form>
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="bt7" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt7_content">
+                <h2>BT7: Sắp xếp tăng dần</h2>
+                <form class="form">
+                  <div class="form-group my-4">
+                    <input type="number" class="form-control input_inline mr-3" id ="myNumber" placeholder="Nhập n">
+                    
+                  </div>
+                  <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+
+  
+                </form>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="bt8" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt8_content">
+                <h2>BT8: Tìm số nguyên tố đầu tiên</h2>
+         
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="bt9" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt9_content">
+                <h2>BT9: Đếm số nguyên</h2>
+                <div class="row align-items-center">
+                  <div class="col-6">
+                    <form>
+                      <div class="form-group">
+                        <label for="addNum_bt9_input">Nhập số vào ô dưới đây</label>
+                        <input type="number" class="form-control" id="addNum_bt9_input" placeholder="Nhập số">
+                      </div>
+                      
+                    </form>
+                  </div>
+          
+                  <div class="col-6 text-center">
+                    <button id="addNum_bt9_btn" class="btn btn-warning w-50">Thêm số</button>
+                  </div>
+          
+                  <div class="col-12 mt-4">
+          
+                    <div class="alert alert-warning" role="alert">
+                      <i class="fas fa-hand-point-right"></i>
+                      Tập hợp số của bạn:
+                      <h4 id="numbers_bt9_collection">Your number here</h4>
+                    </div>
+                  </div>
+                </div>
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="bt10" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <div class="bt10_content">
+                <h2>BT10: So sánh số lượng số âm và dương</h2>
+         
+                <button type ="button" class="btn btn-success d-block show_result_btn w-25 mx-auto">Show Result</button>
+                <p class="show_result_text">
+                  KẾT QUẢ
+                </p>
+              </div>
+            </div>
+
+
+
+
+
+  
+        
+          </div>
+        </div>
+      </div>
+  
+    </main>
+
+ <!-- Jquery -->
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <!-- BS4  -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+ <!-- JS custom -->
+    
+  <script src="./assets/js/script.js"></script>
+
+
+    
+  </body>
+</html>

@@ -73,11 +73,12 @@ renderUI = (index, finalTxt) => {   //hàm render ra UI
 handleBT1 = (index) => {
   var finalTxt = "";
   var sum =0;
+  
 
 
   for(let i=0; i< myArray.length; i++) {
     if(myArray[i] > 0) {
-      
+      // console.log(myArray[i]);
       sum += myArray[i];
     }
   }
@@ -155,8 +156,7 @@ handleBT3 = (index) => {
 handleBT4 = (index) => {
   var finalTxt = "";
   let newArray = [];
-  var vitri = 0;
-  var min = myArray[vitri];
+
  
   for(let i=0; i< myArray.length; i++) {
     if(myArray[i] > 0) {
@@ -166,7 +166,9 @@ handleBT4 = (index) => {
     }
   }
 
-  console.log(newArray);
+  // console.log(newArray);
+  var vitri = 0;
+  var min = newArray[vitri];
 
   if(newArray.length > 0) {
     for(let j = 0; j < newArray.length; j++) {
@@ -222,22 +224,22 @@ handleBT5 = (index) => {
 
 
 handleBT6 = (index) => {
-  console.log('bt6')
+  // console.log('bt6')
   var finalTxt = "";
   const newArray = [...myArray];
-  console.log(newArray);
+  // console.log(newArray);
   var vitri1 = parseInt(document.getElementById('vitri1').value)-1;
   var vitri2 = parseInt(document.getElementById('vitri2').value)-1;
 
   var number1 = newArray[vitri1];
   var number2 = newArray[vitri2];
 
-  console.log(vitri1, vitri2);
-  console.log(newArray[vitri1], newArray[vitri2]);
+  // console.log(vitri1, vitri2);
+  // console.log(newArray[vitri1], newArray[vitri2]);
 
   newArray[vitri1] =number2;
   newArray[vitri2] = number1;
-  console.log(newArray);
+  // console.log(newArray);
 
 
   finalTxt = newArray.join(', ');
@@ -258,44 +260,28 @@ handleBT6 = (index) => {
 
 handleBT7 = (index) => {
   var finalTxt = "";
-  var number = parseInt(document.getElementById('myNumber').value);
-  console.log(number);
-  var flag = 0;
+  const newArray = [...myArray];
   
-  if(number<2) {
-    renderUI(index, 'đây không phải só nguyên tố');
-
-  } else {
-    for(var i =2; i <= number; i++) {
-      console.log(i)
-      for(var j = 2; j <= (Math.sqrt(i)); j++) {
-        console.log(i,j)
-        if(i%j === 0) {
-          console.log('chia hết');
-          flag++;
-          break;      //chỉ cần chia hết cho 1 trong j thì break khỏi vòng lặp j luôn vì k phải là số nguyên tố r
-        } 
-      
-      }
-
-      if(flag !== 0) {
-        console.log(i + ' không phải là số nguyên tố');
-
-      } else {  //flag vẫn =0   ===> i lúc này là só nguyên tố
-        console.log(i + ' là số nguyên tố');
-
-        finalTxt += i + " ";
-      }
-      flag = 0;
-      console.log('finalTXT', finalTxt, i)
+  for(var i=0; i<newArray.length; i++) {
+    //sau khi vòng nhỏ kết thúc thì chỉ có 1 giá trị lớn về cuối mảng
+    for(var j=0; j<newArray.length - 1; j++) {
+        if(newArray[j] > newArray[[j+1]]) {
+            //biến tạm
+            //back up giá trị của phân tử thứ j vào biến tạm
+            var temp = newArray[j];
+            //gán giá trị của phần tử j+1 vào phần tử j
+            newArray[j] = newArray[j+1];
+            //gán giá trị backup vào phần tử j+1;
+            newArray[j+1] = temp;
+        }
     }
+}
+
+finalTxt = newArray.join(', ');
 
 
-    
+  
   renderUI(index, finalTxt);
-
-  }
- 
 
 
 
@@ -308,21 +294,21 @@ handleBT7 = (index) => {
 
 
 handleBT8 = (index) => {
-  console.log('bt8')
+  // console.log('bt8')
   var finalTxt = "";
   var flag = 0;
   var firstSoNguyenTo = -1;
 
 
   for (let i = 0; i < myArray.length; i++) {
-   if(myArray[i] > 1) {    // <1 thì chắc chắn không phải là số nguyên tố
-    console.log('vòng lặp i');
+   if(myArray[i] > 1 && Number.isInteger(myArray[i])) {    // <1 thì chắc chắn không phải là số nguyên tố
+    // console.log('vòng lặp i');
     for(var j = 2; j <= (Math.sqrt(myArray[i])); j++) {
-      console.log('vòng lặp j')
+      // console.log('vòng lặp j')
       
-      console.log(i,j)
+      // console.log(i,j)
       if( myArray[i] % j === 0) {
-        console.log('chia hết');
+        // console.log('chia hết');
         flag++;
         break;      //chỉ cần chia hết cho 1 trong j thì break khỏi vòng lặp j luôn vì k phải là số nguyên tố r
       } 
@@ -330,7 +316,7 @@ handleBT8 = (index) => {
     }
 
     if(flag ===0) {     //đây là số nguyên tố
-      console.log('flag = 0', i);
+      // console.log('flag = 0', i);
       firstSoNguyenTo = myArray[i];
       finalTxt = firstSoNguyenTo;
       break;
@@ -372,7 +358,7 @@ addNum_bt9_btn.onclick = function() {
   var number = parseFloat(addNum_bt9_input.value);
   bt9_Array.push(number);
   document.getElementById('numbers_bt9_collection').innerHTML = bt9_Array.join(', ');
-  console.log(bt9_Array);
+  // console.log(bt9_Array);
 }
 
 
